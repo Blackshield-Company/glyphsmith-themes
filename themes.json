@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "themes": [
+    {
+      "name": "neon-horizon",
+      "title": "Neon Horizon",
+      "description": "Synthwave after dark: a deep midnight purple base under a hot pink sun, with neon cyan grid lines and magenta glow.",
+      "repo": "https://github.com/synthalorian/omarchy-neon-horizon-theme",
+      "version": "0.1.0",
+      "sha256": "9b17f251cb0652df93cd8276c6287c38d969e063b37f0b5e7c45165dbb196da1",
+      "mode": "dark",
+      "accent": "#ff4fa3",
+      "preview": "previews/neon-horizon.png",
+      "released": "2026-10-17T22:06:46Z"
+    },
+    {
+      "name": "steel-and-ember",
+      "title": "Steel & Ember",
+      "description": "Dark and warm, like forged steel and glowing ember: a blue-grey charcoal base with ember orange, amber and forge-red accents.",
+      "repo": "https://github.com/synthalorian/omarchy-steel-and-ember-theme",
+      "version": "0.1.0",
+      "sha256": "7795f6c8aec29b363febcee78844bae76c4ba6ec5861a4ae18ae3c140b560121",
+      "mode": "dark",
+      "accent": "#f28c38",
+      "preview": "previews/steel-and-ember.png",
+      "released": "2026-10-17T01:42:39Z"
+    }
+  ]
+}

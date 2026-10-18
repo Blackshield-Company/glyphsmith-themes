@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+# glyphsmith: pick a Glyphsmith theme and install it with Omarchy's omarchy-theme-install.
+#   glyphsmith [pick]            choose from a menu (fzf, then walker, then a numbered list)
+#   glyphsmith list              print name, version and description
+#   glyphsmith install <name>    install one theme by name
+#   --index <file|url>           themes.json to read (default: next to this script, then the published index)
+#   --dry-run                    print the omarchy-theme-install command instead of running it
+#   --menu fzf|walker|numbered   force a menu
+set -euo pipefail
+
+HERE=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
+REMOTE_INDEX=https://raw.githubusercontent.com/synthalorian/glyphsmith-themes/main/themes.json
+INDEX=${GLYPHSMITH_INDEX:-} CMD=pick ARG="" DRY_RUN=0 MENU=""
+
+usage() { sed -n '2,8p' "$0" | sed 's/^# \{0,1\}//'; }
+die() { printf 'glyphsmith: %s\n' "$*" >&2; exit 1; }
+
+while (( $# )); do
+  case $1 in
+    --index) INDEX=${2:?}; shift ;;
+    --dry-run) DRY_RUN=1 ;;
+    --menu) MENU=${2:?}; shift ;;
+    -h|--help) usage; exit 0 ;;
+    pick|list) CMD=$1 ;;
+    install) CMD=install; ARG=${2:?install needs a theme name}; shift ;;
+    *) die "unknown argument: $1 (try --help)" ;;
+  esac
+  shift
+done
+
+# Load the index as TAB-separated "name version repo description" rows.
+load_index() {
+  local json
+  if [[ -z $INDEX && -f $HERE/themes.json ]]; then INDEX=$HERE/themes.json; fi
+  INDEX=${INDEX:-$REMOTE_INDEX}
+  case $INDEX in
+    https://*) json=$(curl -fsSL --max-time 20 "$INDEX") || die "could not fetch $INDEX" ;;
+    *) [[ -f $INDEX ]] || die "no index at $INDEX"; json=$(<"$INDEX") ;;
+  esac
+  if command -v jq >/dev/null; then
+    jq -r '.themes[] | [.name, .version, .repo, .description] | @tsv' <<<"$json"
+  else
+    python3 -c 'import json,sys
+for t in json.load(sys.stdin)["themes"]: print("\t".join([t["name"], t["version"], t["repo"], t["description"]]))' <<<"$json"
+  fi
+}
+
+mapfile -t ROWS < <(load_index)
+(( ${#ROWS[@]} > 0 )) || die "the index lists no themes"
+
+install_theme() {
+  local name=$1 row repo=""
+  for row in "${ROWS[@]}"; do
+    IFS=$'\t' read -r n _ r _ <<<"$row"
+    [[ $n == "$name" ]] && repo=$r
+  done
+  [[ -n $repo ]] || die "no theme named '$name' (see: glyphsmith list)"
+  # The index is data: accept only a plain GitHub repo URL, so it can't inject options into git.
+  [[ $repo =~ ^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]] || die "refusing odd repo URL for $name: $repo"
+  if (( DRY_RUN )); then echo "omarchy-theme-install $repo"; return; fi
+  command -v omarchy-theme-install >/dev/null || die "omarchy-theme-install not found (is this Omarchy?). Manual: git clone $repo ~/.config/omarchy/themes/$name && omarchy-theme-set $name"
+  omarchy-theme-install "$repo"
+}
+
+pick() {
+  local lines=() row n v d choice i
+  for row in "${ROWS[@]}"; do IFS=$'\t' read -r n v _ d <<<"$row"; lines+=("$(printf '%-18s %-8s %s' "$n" "$v" "$d")"); done
+  if [[ -z $MENU ]]; then
+    if command -v fzf >/dev/null && [[ -t 0 && -t 1 ]]; then MENU=fzf
+    elif command -v walker >/dev/null && [[ -n ${WAYLAND_DISPLAY:-} ]]; then MENU=walker
+    else MENU=numbered; fi
+  fi
+  case $MENU in
+    fzf) choice=$(printf '%s\n' "${lines[@]}" | fzf --prompt='theme> ' --height=40% --reverse) || exit 130 ;;
+    walker) choice=$(printf '%s\n' "${lines[@]}" | walker --dmenu --placeholder 'Glyphsmith theme') || exit 130 ;;
+    numbered)
+      for i in "${!lines[@]}"; do printf '%2d) %s\n' $((i+1)) "${lines[$i]}"; done
+      printf 'Install which theme? [1-%d, q to quit] ' "${#lines[@]}"
+      read -r i || exit 130
+      [[ $i == q || -z $i ]] && exit 130
+      if ! [[ $i =~ ^[0-9]+$ ]] || (( i < 1 || i > ${#lines[@]} )); then die "not a choice: $i"; fi
+      choice=${lines[$((i-1))]} ;;
+    *) die "unknown menu $MENU" ;;
+  esac
+  [[ -n $choice ]] || exit 130
+  install_theme "${choice%% *}"
+}
+
+case $CMD in
+  list) for row in "${ROWS[@]}"; do IFS=$'\t' read -r n v _ d <<<"$row"; printf '%-18s %-8s %s\n' "$n" "$v" "$d"; done ;;
+  install) install_theme "$ARG" ;;
+  pick) pick ;;
+esac
