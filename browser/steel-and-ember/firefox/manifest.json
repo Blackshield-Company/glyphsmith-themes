@@ -1,0 +1,62 @@
+{
+  "manifest_version": 2,
+  "name": "Steel & Ember",
+  "version": "0.1.0",
+  "description": "Steel & Ember browser theme by synthalorian: chromatic frame and accent toolbar.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "steel-and-ember@themes.glyphsmith.synthalorian",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "theme": {
+    "images": {
+      "theme_frame": "images/theme_frame.png"
+    },
+    "colors": {
+      "frame": "#0e1013",
+      "frame_inactive": "#0e1013",
+      "tab_background_text": "#d4cfc8",
+      "tab_text": "#0e1013",
+      "tab_selected": "#f28c38",
+      "tab_line": "#79b0b0",
+      "tab_loading": "#79b0b0",
+      "toolbar": "#f28c38",
+      "toolbar_text": "#0e1013",
+      "toolbar_field": "#14171b",
+      "toolbar_field_text": "#f2ebe1",
+      "toolbar_field_border": "#0e1013",
+      "toolbar_field_focus": "#14171b",
+      "toolbar_field_text_focus": "#f2ebe1",
+      "toolbar_field_border_focus": "#79b0b0",
+      "toolbar_field_highlight": "#f28c38",
+      "toolbar_field_highlight_text": "#0e1013",
+      "toolbar_top_separator": "#f28c38",
+      "toolbar_bottom_separator": "#f28c38",
+      "toolbar_vertical_separator": "#0e1013",
+      "icons": "#0e1013",
+      "icons_attention": "#14171b",
+      "bookmark_text": "#0e1013",
+      "popup": "#14171b",
+      "popup_text": "#f2ebe1",
+      "popup_border": "#f28c38",
+      "popup_highlight": "#f28c38",
+      "popup_highlight_text": "#0e1013",
+      "sidebar": "#191d22",
+      "sidebar_text": "#f2ebe1",
+      "sidebar_border": "#f28c38",
+      "sidebar_highlight": "#f28c38",
+      "sidebar_highlight_text": "#0e1013",
+      "ntp_background": "#191d22",
+      "ntp_text": "#f2ebe1",
+      "button_background_hover": "#79b0b0",
+      "button_background_active": "#d4cfc8",
+      "tab_background_separator": "#f28c38"
+    }
+  }
+}
