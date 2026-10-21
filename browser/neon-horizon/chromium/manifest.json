@@ -1,0 +1,139 @@
+{
+  "manifest_version": 3,
+  "name": "Neon Horizon",
+  "version": "0.1.0",
+  "description": "Neon Horizon browser theme by synthalorian: chromatic frame and accent toolbar.",
+  "theme": {
+    "colors": {
+      "frame": [
+        13,
+        7,
+        23
+      ],
+      "frame_inactive": [
+        13,
+        7,
+        23
+      ],
+      "frame_incognito": [
+        13,
+        7,
+        23
+      ],
+      "frame_incognito_inactive": [
+        13,
+        7,
+        23
+      ],
+      "toolbar": [
+        255,
+        79,
+        163
+      ],
+      "toolbar_text": [
+        13,
+        7,
+        23
+      ],
+      "toolbar_button_icon": [
+        13,
+        7,
+        23
+      ],
+      "tab_text": [
+        13,
+        7,
+        23
+      ],
+      "background_tab": [
+        13,
+        7,
+        23
+      ],
+      "background_tab_inactive": [
+        13,
+        7,
+        23
+      ],
+      "background_tab_incognito": [
+        13,
+        7,
+        23
+      ],
+      "background_tab_incognito_inactive": [
+        13,
+        7,
+        23
+      ],
+      "tab_background_text": [
+        230,
+        220,
+        245
+      ],
+      "tab_background_text_inactive": [
+        230,
+        220,
+        245
+      ],
+      "tab_background_text_incognito": [
+        230,
+        220,
+        245
+      ],
+      "tab_background_text_incognito_inactive": [
+        230,
+        220,
+        245
+      ],
+      "bookmark_text": [
+        13,
+        7,
+        23
+      ],
+      "button_background": [
+        255,
+        79,
+        163
+      ],
+      "omnibox_background": [
+        20,
+        12,
+        33
+      ],
+      "omnibox_text": [
+        253,
+        247,
+        255
+      ],
+      "ntp_background": [
+        26,
+        16,
+        41
+      ],
+      "ntp_text": [
+        253,
+        247,
+        255
+      ],
+      "ntp_link": [
+        79,
+        227,
+        240
+      ],
+      "ntp_header": [
+        230,
+        220,
+        245
+      ]
+    },
+    "images": {
+      "theme_frame": "images/theme_frame.png",
+      "theme_frame_inactive": "images/theme_frame_inactive.png",
+      "theme_ntp_background": "images/theme_ntp_background.png"
+    },
+    "properties": {
+      "ntp_background_alignment": "center",
+      "ntp_background_repeat": "repeat"
+    }
+  }
+}

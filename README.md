@@ -45,6 +45,12 @@ omarchy-theme-install https://github.com/synthalorian/omarchy-steel-and-ember-th
 
 <!-- gallery:end -->
 
+## Browser themes
+
+Matching [Firefox and Chromium companions](browser/README.md) are available for
+every desktop theme in the collection. Build reproducible **unsigned** ZIPs with
+`python3 tools/browser.py build`; no signing, publishing or installation occurs.
+
 ## Adding a theme
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).

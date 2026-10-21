@@ -1,0 +1,139 @@
+{
+  "manifest_version": 3,
+  "name": "Steel & Ember",
+  "version": "0.1.0",
+  "description": "Steel & Ember browser theme by synthalorian: chromatic frame and accent toolbar.",
+  "theme": {
+    "colors": {
+      "frame": [
+        14,
+        16,
+        19
+      ],
+      "frame_inactive": [
+        14,
+        16,
+        19
+      ],
+      "frame_incognito": [
+        14,
+        16,
+        19
+      ],
+      "frame_incognito_inactive": [
+        14,
+        16,
+        19
+      ],
+      "toolbar": [
+        242,
+        140,
+        56
+      ],
+      "toolbar_text": [
+        14,
+        16,
+        19
+      ],
+      "toolbar_button_icon": [
+        14,
+        16,
+        19
+      ],
+      "tab_text": [
+        14,
+        16,
+        19
+      ],
+      "background_tab": [
+        14,
+        16,
+        19
+      ],
+      "background_tab_inactive": [
+        14,
+        16,
+        19
+      ],
+      "background_tab_incognito": [
+        14,
+        16,
+        19
+      ],
+      "background_tab_incognito_inactive": [
+        14,
+        16,
+        19
+      ],
+      "tab_background_text": [
+        212,
+        207,
+        200
+      ],
+      "tab_background_text_inactive": [
+        212,
+        207,
+        200
+      ],
+      "tab_background_text_incognito": [
+        212,
+        207,
+        200
+      ],
+      "tab_background_text_incognito_inactive": [
+        212,
+        207,
+        200
+      ],
+      "bookmark_text": [
+        14,
+        16,
+        19
+      ],
+      "button_background": [
+        242,
+        140,
+        56
+      ],
+      "omnibox_background": [
+        20,
+        23,
+        27
+      ],
+      "omnibox_text": [
+        242,
+        235,
+        225
+      ],
+      "ntp_background": [
+        25,
+        29,
+        34
+      ],
+      "ntp_text": [
+        242,
+        235,
+        225
+      ],
+      "ntp_link": [
+        121,
+        176,
+        176
+      ],
+      "ntp_header": [
+        212,
+        207,
+        200
+      ]
+    },
+    "images": {
+      "theme_frame": "images/theme_frame.png",
+      "theme_frame_inactive": "images/theme_frame_inactive.png",
+      "theme_ntp_background": "images/theme_ntp_background.png"
+    },
+    "properties": {
+      "ntp_background_alignment": "center",
+      "ntp_background_repeat": "repeat"
+    }
+  }
+}

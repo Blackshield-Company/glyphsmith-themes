@@ -1,0 +1,62 @@
+{
+  "manifest_version": 2,
+  "name": "Neon Horizon",
+  "version": "0.1.0",
+  "description": "Neon Horizon browser theme by synthalorian: chromatic frame and accent toolbar.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "neon-horizon@themes.glyphsmith.synthalorian",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "theme": {
+    "images": {
+      "theme_frame": "images/theme_frame.png"
+    },
+    "colors": {
+      "frame": "#0d0717",
+      "frame_inactive": "#0d0717",
+      "tab_background_text": "#e6dcf5",
+      "tab_text": "#0d0717",
+      "tab_selected": "#ff4fa3",
+      "tab_line": "#4fe3f0",
+      "tab_loading": "#4fe3f0",
+      "toolbar": "#ff4fa3",
+      "toolbar_text": "#0d0717",
+      "toolbar_field": "#140c21",
+      "toolbar_field_text": "#fdf7ff",
+      "toolbar_field_border": "#0d0717",
+      "toolbar_field_focus": "#140c21",
+      "toolbar_field_text_focus": "#fdf7ff",
+      "toolbar_field_border_focus": "#4fe3f0",
+      "toolbar_field_highlight": "#ff4fa3",
+      "toolbar_field_highlight_text": "#0d0717",
+      "toolbar_top_separator": "#ff4fa3",
+      "toolbar_bottom_separator": "#ff4fa3",
+      "toolbar_vertical_separator": "#0d0717",
+      "icons": "#0d0717",
+      "icons_attention": "#140c21",
+      "bookmark_text": "#0d0717",
+      "popup": "#140c21",
+      "popup_text": "#fdf7ff",
+      "popup_border": "#ff4fa3",
+      "popup_highlight": "#ff4fa3",
+      "popup_highlight_text": "#0d0717",
+      "sidebar": "#1a1029",
+      "sidebar_text": "#fdf7ff",
+      "sidebar_border": "#ff4fa3",
+      "sidebar_highlight": "#ff4fa3",
+      "sidebar_highlight_text": "#0d0717",
+      "ntp_background": "#1a1029",
+      "ntp_text": "#fdf7ff",
+      "button_background_hover": "#4fe3f0",
+      "button_background_active": "#e6dcf5",
+      "tab_background_separator": "#ff4fa3"
+    }
+  }
+}

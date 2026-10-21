@@ -1,0 +1,26 @@
+{
+  "neon-horizon": {
+    "source": "https://github.com/synthalorian/omarchy-neon-horizon-theme/blob/4750c9402943aa8ad08c1fd41b9ad7004801316d/colors.toml",
+    "title": "Neon Horizon",
+    "version": "0.1.0",
+    "darker_background": "#0d0717",
+    "dark_background": "#140c21",
+    "background": "#1a1029",
+    "foreground": "#e6dcf5",
+    "bright_foreground": "#fdf7ff",
+    "accent": "#ff4fa3",
+    "cyan": "#4fe3f0"
+  },
+  "steel-and-ember": {
+    "source": "https://github.com/synthalorian/omarchy-steel-and-ember-theme/blob/949655fa39c26fa607d7378a8ae71b42a4c0a4f2/colors.toml",
+    "title": "Steel & Ember",
+    "version": "0.1.0",
+    "darker_background": "#0e1013",
+    "dark_background": "#14171b",
+    "background": "#191d22",
+    "foreground": "#d4cfc8",
+    "bright_foreground": "#f2ebe1",
+    "accent": "#f28c38",
+    "cyan": "#79b0b0"
+  }
+}
