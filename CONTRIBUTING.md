@@ -1,8 +1,16 @@
 # Adding a theme to the collection
 
-Themes are never committed here. Each one ships from its own repo,
+Desktop themes are never committed here. Each one ships from its own repo,
 `github.com/synthalorian/omarchy-<name>-theme`, and this repo only indexes them in `themes.json`. The index
 feeds both the README gallery and the `glyphsmith` picker.
+
+Browser companion sources are the exception: they live in `browser/<name>/firefox`
+and `browser/<name>/chromium`. See [browser/README.md](browser/README.md) for the
+palette source, generator, unsigned ZIP build and validation workflow. When adding
+an indexed desktop theme, add its pinned palette to `browser/palettes.json`, run
+`python3 tools/browser.py generate`, and commit both browser companions. CI requires
+complete coverage of the desktop index. Browser work does not authorize signing or
+publishing, and must not include credentials or prebuilt signed extensions.
 
 ## The release path (Glyphsmith studio)
 
