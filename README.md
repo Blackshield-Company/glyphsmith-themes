@@ -9,7 +9,7 @@ Try one in a single line, or grab the picker below to browse them all.
 ## Pick one from the terminal
 
 ```bash
-git clone https://github.com/synthalorian/glyphsmith-themes
+git clone https://github.com/Blackshield-Company/glyphsmith-themes
 ./glyphsmith-themes/glyphsmith            # menu (fzf or walker if installed, a numbered list otherwise)
 ./glyphsmith-themes/glyphsmith list       # list the themes
 ./glyphsmith-themes/glyphsmith install neon-horizon
@@ -31,16 +31,16 @@ Synthwave after dark: a deep midnight purple base under a hot pink sun, with neo
 omarchy-theme-install https://github.com/synthalorian/omarchy-neon-horizon-theme
 ```
 
-### [Steel & Ember](https://github.com/synthalorian/omarchy-steel-and-ember-theme)
+### [Steel & Ember](https://github.com/Blackshield-Company/omarchy-steel-and-ember-theme)
 
-[![Steel & Ember preview](previews/steel-and-ember.png)](https://github.com/synthalorian/omarchy-steel-and-ember-theme)
+[![Steel & Ember preview](previews/steel-and-ember.png)](https://github.com/Blackshield-Company/omarchy-steel-and-ember-theme)
 
 Dark and warm, like forged steel and glowing ember: a blue-grey charcoal base with ember orange, amber and forge-red accents.
 
-`dark` · accent `#f28c38` · v0.1.0, released 2026-10-17 · [repo](https://github.com/synthalorian/omarchy-steel-and-ember-theme) · [release](https://github.com/synthalorian/omarchy-steel-and-ember-theme/releases/tag/v0.1.0)
+`dark` · accent `#f28c38` · v0.1.0, released 2026-10-17 · [repo](https://github.com/Blackshield-Company/omarchy-steel-and-ember-theme) · [release](https://github.com/Blackshield-Company/omarchy-steel-and-ember-theme/releases/tag/v0.1.0)
 
 ```bash
-omarchy-theme-install https://github.com/synthalorian/omarchy-steel-and-ember-theme
+omarchy-theme-install https://github.com/Blackshield-Company/omarchy-steel-and-ember-theme
 ```
 
 <!-- gallery:end -->

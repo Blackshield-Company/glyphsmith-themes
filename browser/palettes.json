@@ -12,7 +12,7 @@
     "cyan": "#4fe3f0"
   },
   "steel-and-ember": {
-    "source": "https://github.com/synthalorian/omarchy-steel-and-ember-theme/blob/949655fa39c26fa607d7378a8ae71b42a4c0a4f2/colors.toml",
+    "source": "https://github.com/Blackshield-Company/omarchy-steel-and-ember-theme/blob/949655fa39c26fa607d7378a8ae71b42a4c0a4f2/colors.toml",
     "title": "Steel & Ember",
     "version": "0.1.0",
     "darker_background": "#0e1013",
