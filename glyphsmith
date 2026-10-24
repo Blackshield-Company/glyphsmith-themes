@@ -9,7 +9,7 @@
 set -euo pipefail
 
 HERE=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
-REMOTE_INDEX=https://raw.githubusercontent.com/synthalorian/glyphsmith-themes/main/themes.json
+REMOTE_INDEX=https://raw.githubusercontent.com/Blackshield-Company/glyphsmith-themes/main/themes.json
 INDEX=${GLYPHSMITH_INDEX:-} CMD=pick ARG="" DRY_RUN=0 MENU=""
 
 usage() { sed -n '2,8p' "$0" | sed 's/^# \{0,1\}//'; }
