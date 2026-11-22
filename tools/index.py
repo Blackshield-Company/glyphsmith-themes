@@ -14,15 +14,17 @@ import argparse, json, re, sys, time, tomllib
 from pathlib import Path
 
 START, END = "<!-- gallery:start -->", "<!-- gallery:end -->"
+# Same shape the glyphsmith picker accepts (ASCII only; no "." or ".." segments).
+REPO_RE = re.compile(r"https://github\.com/(?!\.+/)[A-Za-z0-9_.-]+/(?!\.+$)[A-Za-z0-9_.-]+")
 VARIANT_KINDS = ("light", "dark", "ghostty", "kitty", "alacritty", "foot", "vscode", "neovim", "wallpapers", "other")
 
 def validate(data: dict) -> list:
     errs = []
     for t in data.get("themes", []):
         n = t.get("name", "?")
-        for k in ("name", "title", "description", "repo", "version", "released", "preview"):
+        for k in ("name", "title", "description", "repo", "version", "released", "preview", "mode", "accent"):
             if not t.get(k): errs.append(f"{n}: missing {k}")
-        if not re.fullmatch(r"https://github\.com/[\w.-]+/[\w.-]+", t.get("repo", "")): errs.append(f"{n}: bad repo URL")
+        if not REPO_RE.fullmatch(t.get("repo", "")): errs.append(f"{n}: bad repo URL")
         if t.get("released") and not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", t["released"]): errs.append(f"{n}: released must be ISO 8601 UTC")
         for v in t.get("variants", []) or []:
             if set(v) != {"name", "kind", "url"}: errs.append(f"{n}: variant needs exactly name, kind, url: {v}")
@@ -76,7 +78,7 @@ def render(col: Path) -> None:
 
 def upsert(a) -> None:
     col, theme = Path(a.collection), Path(a.theme_dir)
-    if not re.fullmatch(r"https://github\.com/[\w.-]+/[\w.-]+", a.repo):
+    if not REPO_RE.fullmatch(a.repo):
         sys.exit(f"repo must be an https://github.com/OWNER/NAME URL: {a.repo}")
     if not re.fullmatch(r"[a-z0-9_][a-z0-9._+-]*", a.name):
         sys.exit(f"bad theme name {a.name}")

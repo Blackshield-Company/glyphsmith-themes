@@ -57,6 +57,7 @@ install_theme() {
   [[ -n $repo ]] || die "no theme named '$name' (see: glyphsmith list)"
   # The index is data: accept only a plain GitHub repo URL, so it can't inject options into git.
   [[ $repo =~ ^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]] || die "refusing odd repo URL for $name: $repo"
+  [[ $repo =~ ^https://github\.com/\.+/ || $repo =~ /\.+$ ]] && die "refusing odd repo URL for $name: $repo"
   if (( DRY_RUN )); then echo "omarchy-theme-install $repo"; return; fi
   command -v omarchy-theme-install >/dev/null || die "omarchy-theme-install not found (is this Omarchy?). Manual: git clone $repo ~/.config/omarchy/themes/$name && omarchy-theme-set $name"
   omarchy-theme-install "$repo"
